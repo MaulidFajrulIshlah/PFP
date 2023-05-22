@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".view.loginregist.LoginFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <TextView
+        android:id="@+id/Login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerInParent="true"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_marginTop="62dp"
+        android:layout_marginEnd="180dp"
+        android:text="@string/login" />
+
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="124dp"
+        android:layout_height="111dp"
+        android:layout_below="@+id/Login"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="38dp"
+        android:layout_marginEnd="142dp"
+        app:srcCompat="@drawable/ic_person"
+        android:contentDescription="@string/todo" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/Email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="45dp"
+        android:layout_marginRight="45dp"
+        android:layout_below="@+id/imageView3"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="25dp">
+
+        <EditText
+            android:id="@+id/insEmail"
+            android:backgroundTint="#DEFDFC"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="@string/email"
+            tools:ignore="SpeakableTextPresentCheck"
+            android:inputType="textEmailAddress"
+            android:autofillHints="" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/Password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:endIconMode="password_toggle"
+        android:layout_marginLeft="45dp"
+        android:layout_marginRight="45dp"
+        android:layout_below="@+id/Email"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="25dp">
+
+        <EditText
+            android:id="@+id/insPass"
+            android:inputType="textPassword"
+            android:layout_width="match_parent"
+            android:backgroundTint="#DEFDFC"
+            android:layout_height="match_parent"
+            android:hint="@string/password"
+            tools:ignore="SpeakableTextPresentCheck"
+            android:autofillHints="" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/btnLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Password"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="65dp"
+        android:backgroundTint="#B0DAFF"
+        android:text="@string/login"
+        android:textColor="@color/black" />
+
+    <TextView
+        android:textColor="@color/black"
+        android:id="@+id/Register"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btnLogin"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="142dp"
+        android:layout_marginTop="5dp"
+        android:text="@string/belum_punya_akun" />
+
+</RelativeLayout>
