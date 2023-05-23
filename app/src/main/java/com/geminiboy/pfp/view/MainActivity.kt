@@ -3,7 +3,9 @@ package com.geminiboy.pfp.view
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.geminiboy.pfp.databinding.ActivityMainBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 
 class MainActivity : AppCompatActivity() {
 

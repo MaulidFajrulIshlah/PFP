@@ -10,19 +10,20 @@
     <!-- TODO: Update blank fragment layout -->
     <TextView
         android:id="@+id/detailProduct"
-        android:textSize="45sp"
-        android:layout_marginTop="35dp"
+        style="@style/detail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerInParent="true"
-        style="@style/detail"
+        android:layout_marginTop="35dp"
         android:text="Detail Product"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:textSize="45sp" />
+
     <ImageView
-        android:id="@+id/product"
-        android:layout_below="@id/detailProduct"
+        android:id="@+id/Imgproduct"
         android:layout_width="match_parent"
         android:layout_height="150dp"
+        android:layout_below="@id/detailProduct"
         android:layout_alignParentTop="true"
         android:layout_centerInParent="true"
         android:layout_marginTop="150dp"
@@ -33,7 +34,7 @@
             android:id="@+id/namaBarang"
             android:textStyle="bold"
             android:text="Handphone Jadul"
-            android:layout_below="@id/product"
+            android:layout_below="@id/Imgproduct"
             android:layout_marginTop="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
