@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_graph"
+    app:startDestination="@id/fragmentHome">
+
+    <fragment
+        android:id="@+id/fragmentHome"
+        android:name="com.geminiboy.pfp.view.FragmentHome"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_fragmentHome_to_loginFragment"
+            app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_fragmentHome_to_detailFragment"
+            app:destination="@id/detailFragment" />
+        <action
+            android:id="@+id/action_fragmentHome_to_fragmentFavorit"
+            app:destination="@id/fragmentFavorit" />
+        <action
+            android:id="@+id/action_fragmentHome_to_registerFragment"
+            app:destination="@id/registerFragment" />
+        <action
+            android:id="@+id/action_fragmentHome_to_fragmentProfile"
+            app:destination="@id/fragmentProfile" />
+        <action
+            android:id="@+id/action_fragmentHome_to_fragmentRiwayat"
+            app:destination="@id/fragmentRiwayat" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="com.geminiboy.pfp.view.DetailFragment"
+        android:label="fragment_detail"
+        tools:layout="@layout/fragment_detail" />
+    <fragment
+        android:id="@+id/fragmentFavorit"
+        android:name="com.geminiboy.pfp.view.FragmentFavorit"
+        android:label="fragment_favorit"
+        tools:layout="@layout/fragment_favorit" />
+    <fragment
+        android:id="@+id/fragmentProfile"
+        android:name="com.geminiboy.pfp.view.FragmentProfile"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/fragmentRiwayat"
+        android:name="com.geminiboy.pfp.view.FragmentRiwayat"
+        android:label="fragment_riwayat"
+        tools:layout="@layout/fragment_riwayat" />
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="com.geminiboy.pfp.view.loginregist.RegisterFragment"
+        android:label="fragment_register"
+        tools:layout="@layout/fragment_register" />
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.geminiboy.pfp.view.loginregist.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" />
+</navigation>

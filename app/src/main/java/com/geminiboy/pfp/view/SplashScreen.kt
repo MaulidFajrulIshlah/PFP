@@ -7,6 +7,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.geminiboy.pfp.R
+import dagger.hilt.android.AndroidEntryPoint
+
+@AndroidEntryPoint
 
 @SuppressLint("CustomSplashScreen")
 class SplashScreen : Fragment() {

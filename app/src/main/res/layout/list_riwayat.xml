@@ -11,25 +11,26 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <ImageView
-            android:id="@+id/imgProduct"
+            android:id="@+id/lRGambarProduct"
             android:src="@drawable/product"
             android:layout_width="100dp"
             android:layout_height="100dp"/>
 
         <TextView
-            android:id="@+id/lHarga"
+            android:id="@+id/lRNama"
             style="@style/list"
             android:layout_marginLeft="10dp"
-            android:layout_toRightOf="@id/imgProduct"
+            android:layout_toRightOf="@id/lRGambarProduct"
             android:text="Nama"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
         <TextView
+            android:id="@+id/lRHarga"
             style="@style/list"
-            android:layout_below="@id/lHarga"
+            android:layout_below="@id/lRNama"
             android:layout_marginTop="5dp"
             android:layout_marginLeft="10dp"
-            android:layout_toRightOf="@id/imgProduct"
+            android:layout_toRightOf="@id/lRGambarProduct"
             android:text="Harga"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
