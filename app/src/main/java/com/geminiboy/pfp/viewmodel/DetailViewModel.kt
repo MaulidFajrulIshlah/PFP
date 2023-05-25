@@ -18,8 +18,8 @@ class DetailViewModel @Inject constructor(private val api : APIService): ViewMod
     val detailProduct: LiveData<ResponseProductItem> get() = _detailProduct
 
 
-    fun setDetailProduct() = viewModelScope.launch {
-        val response = api.getProductById(1, 1)
+    fun setDetailProduct(id: Int, id_product : Int) = viewModelScope.launch {
+        val response = api.getProductById(id, id_product)
         try {
             _detailProduct.postValue(response)
         }catch(e: Exception) {

@@ -14,6 +14,7 @@ import com.geminiboy.pfp.adapter.AdapterNewsUpdate
 import com.geminiboy.pfp.adapter.AdapterProduct
 import com.geminiboy.pfp.databinding.FragmentDetailBinding
 import com.geminiboy.pfp.databinding.FragmentHomeBinding
+import com.geminiboy.pfp.model.product.ResponseProductItem
 import com.geminiboy.pfp.viewmodel.DetailViewModel
 import com.geminiboy.pfp.viewmodel.HomeViewModel
 import dagger.hilt.android.AndroidEntryPoint
@@ -24,7 +25,6 @@ class DetailFragment : Fragment() {
 
     lateinit var binding: FragmentDetailBinding
     private val detailVM: DetailViewModel by viewModels()
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -41,8 +41,8 @@ class DetailFragment : Fragment() {
     }
 
     private fun setLayoutDetail(){
-        detailVM.setDetailProduct()
-            detailVM.detailProduct.observe(viewLifecycleOwner){
+        detailVM.setDetailProduct(id, id_product)
+        detailVM.detailProduct.observe(viewLifecycleOwner){
                 if (it != null){
                     Glide.with(requireContext()).load(it.productImage).into(binding.Imgproduct)
                     binding.namaBarang.text = it.name
@@ -51,7 +51,9 @@ class DetailFragment : Fragment() {
 
                 }
 
-            }
+
+
+        }
 
     }
 
