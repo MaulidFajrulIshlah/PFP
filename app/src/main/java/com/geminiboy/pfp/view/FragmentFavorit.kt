@@ -12,7 +12,6 @@ import dagger.hilt.android.AndroidEntryPoint
 
 class FragmentFavorit : Fragment() {
 
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?

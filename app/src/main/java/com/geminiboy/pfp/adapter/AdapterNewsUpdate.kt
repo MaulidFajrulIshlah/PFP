@@ -14,7 +14,7 @@ class AdapterNewsUpdate(private val listNewsUpdate: List<ResponseNewsItem>):
     class ViewHolder(var binding : ItemNewsUpdateBinding): RecyclerView.ViewHolder(binding.root) {
         fun bindNewsUpdate(dataNews: ResponseNewsItem){
             binding.tittleNewsUpdate.text = dataNews.title
-            binding.contentNewsUpdate.text = dataNews.content
+            binding.idCreateAt.text = dataNews.createdAt
 
             Glide.with(itemView).load(dataNews.newsImage).into(binding.imgNewsUpdate)
         }

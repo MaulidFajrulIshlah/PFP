@@ -6,18 +6,9 @@
     android:layout_height="match_parent"
     tools:context=".view.MainActivity">
 
-    <ImageView
-        android:id="@+id/profile"
-        android:layout_alignParentEnd="true"
-        android:background="@color/white"
-        android:src="@drawable/ic_cart"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
-
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragmentContainerView"
-        android:layout_marginVertical="40dp"
         android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -28,9 +19,12 @@
         app:layout_constraintTop_toTopOf="parent"
         app:navGraph="@navigation/navigation_graph" />
 
+
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@color/youngBlue"
         android:orientation="horizontal"
         android:padding="15dp"
         android:layout_alignParentBottom="true">

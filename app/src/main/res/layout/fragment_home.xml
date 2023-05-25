@@ -15,17 +15,35 @@
     <com.denzcoskun.imageslider.ImageSlider
         android:id="@+id/image_slider"
         android:layout_width="wrap_content"
-        android:layout_height="300dp"
+        android:layout_height="200dp"
         app:iss_auto_cycle="true"
         app:iss_period="1000"
         app:iss_delay="1000"
         app:iss_text_align="CENTER"/>
+
+        <TextView
+            android:layout_marginTop="60dp"
+            android:id="@+id/txt_category"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Category"
+            style="@style/TextSize"
+            android:layout_below="@+id/image_slider"
+            />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_marginTop="10dp"
+            android:id="@+id/rv_category"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txt_category"/>
+
     <TextView
         android:id="@+id/newsUpdate"
         style="@style/TextSize"
         android:text="News Upate"
-        android:layout_marginTop="10dp"
-        android:layout_below="@id/image_slider"
+        android:layout_marginTop="30dp"
+        android:layout_below="@id/rv_category"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 
@@ -39,7 +57,7 @@
     <TextView
         android:id="@+id/product"
         style="@style/TextSize"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="30dp"
         android:text="Product"
         android:layout_below="@id/rv_newsUpdate"
         android:layout_width="wrap_content"

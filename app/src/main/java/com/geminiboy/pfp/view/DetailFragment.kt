@@ -51,9 +51,6 @@ class DetailFragment : Fragment() {
                     binding.desBarang.text = it.description
 
                 }
-
-
-
         }
 
     }
