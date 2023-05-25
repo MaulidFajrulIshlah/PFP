@@ -17,7 +17,6 @@ class DetailViewModel @Inject constructor(private val api : APIService): ViewMod
     private val _detailProduct: MutableLiveData<ResponseProductItem> = MutableLiveData()
     val detailProduct: LiveData<ResponseProductItem> get() = _detailProduct
 
-
     fun setDetailProduct() = viewModelScope.launch {
         val response = api.getProductById(1, 1)
         try {

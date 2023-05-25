@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.denzcoskun.imageslider.ImageSlider
 import com.denzcoskun.imageslider.models.SlideModel
@@ -59,8 +60,7 @@ class FragmentHome : Fragment() {
     }
 
     private fun setLayoutProduct(){
-        binding.rvProduct.layoutManager = LinearLayoutManager(requireContext(),
-            LinearLayoutManager.HORIZONTAL, false)
+        binding.rvProduct.layoutManager = GridLayoutManager(requireContext(), 2)
 
         productVM.setProduct()
         productVM.product.observe(viewLifecycleOwner){

@@ -29,9 +29,6 @@ class HomeViewModel @Inject constructor(
     val product: LiveData<List<ResponseProductItem>> get() = _product
 
 
-
-
-
     fun setNewsUpdate() = viewModelScope.launch {
         val response = api.getNewsUpdate()
         try {
