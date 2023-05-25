@@ -19,12 +19,5 @@ class DetailViewModel @Inject constructor(private val api : APIService): ViewMod
 
     fun setDetailProduct() = viewModelScope.launch {
         val response = api.getProductById(1, 1)
-        try {
-            _detailProduct.postValue(response)
-        }catch(e: Exception) {
-            Log.e("error", e.message!!)
-        }
-    }
-
 
 }
