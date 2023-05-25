@@ -28,7 +28,7 @@ class DetailFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Inflate the layout for this fragment
         binding = FragmentDetailBinding.inflate(layoutInflater,container,false)
         return binding.root
@@ -36,12 +36,13 @@ class DetailFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        setLayoutDetail()
+        val getProductId = arguments?.getInt("ID")
+        setLayoutDetail(getProductId!!)
 
     }
 
-    private fun setLayoutDetail(){
-        detailVM.setDetailProduct(id, id_product)
+    private fun setLayoutDetail(id_product: Int){
+        detailVM.setDetailProduct(id_product)
         detailVM.detailProduct.observe(viewLifecycleOwner){
                 if (it != null){
                     Glide.with(requireContext()).load(it.productImage).into(binding.Imgproduct)
