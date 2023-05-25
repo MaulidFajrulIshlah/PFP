@@ -6,7 +6,6 @@ import com.geminiboy.pfp.databinding.ActivityMainBinding
 
 
 class MainActivity : AppCompatActivity() {
-
     lateinit var binding : ActivityMainBinding
 //    val imageList = arrayListOf<SlideModel>()
 
