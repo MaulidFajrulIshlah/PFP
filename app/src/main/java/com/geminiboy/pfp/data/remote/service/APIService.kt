@@ -4,13 +4,14 @@ import com.geminiboy.pfp.model.cart.ResponseCart
 import com.geminiboy.pfp.model.category.ResponseCategory
 import com.geminiboy.pfp.model.favourite.ResponseFavourite
 import com.geminiboy.pfp.model.news.ResponseNews
-import com.geminiboy.pfp.model.news.ResponseNewsItem
 import com.geminiboy.pfp.model.product.ResponseProduct
 import com.geminiboy.pfp.model.product.ResponseProductItem
 import com.geminiboy.pfp.model.sliders.ResponseSliders
 import com.geminiboy.pfp.model.transaksi_history.ResponseTransactionHistory
 import com.geminiboy.pfp.model.users.ResponseUsers
-import retrofit2.Call
+import com.geminiboy.pfp.model.users.ResponseUsersItem
+import com.geminiboy.pfp.model.users.UserBody
+import retrofit2.http.Body
 import retrofit2.http.DELETE
 import retrofit2.http.GET
 import retrofit2.http.POST
@@ -19,11 +20,11 @@ import retrofit2.http.Path
 
 interface APIService {
     //Users
-    @GET("users/{id}")
-    suspend fun getUserById(@Path("id") id: Int): ResponseUsers
+    @GET("users")
+    suspend fun getUser(): List<ResponseUsersItem>
 
     @POST("users")
-    suspend fun postUser(): ResponseUsers
+    suspend fun postUser(@Body user: UserBody): ResponseUsersItem
 
     @PUT("users/{id}")
     suspend fun putUserById(@Path("id") id: Int): ResponseUsers

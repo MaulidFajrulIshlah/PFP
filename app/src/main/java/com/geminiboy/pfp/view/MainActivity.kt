@@ -24,4 +24,8 @@ class MainActivity : AppCompatActivity() {
 //        val sliderLayout = findViewById<ImageSlider>(R.id.image_slider)
 //        sliderLayout.setImageList(imageList)
     }
+
+    fun setBottomNavigationVisibility(visibility: Int) {
+        binding.bottomNavigationLayout.visibility = visibility
+    }
 }

@@ -10,7 +10,6 @@ import com.geminiboy.pfp.model.news.ResponseNewsItem
 class AdapterNewsUpdate(private val listNewsUpdate: List<ResponseNewsItem>):
     RecyclerView.Adapter<AdapterNewsUpdate.ViewHolder>() {
 
-
     class ViewHolder(var binding : ItemNewsUpdateBinding): RecyclerView.ViewHolder(binding.root) {
         fun bindNewsUpdate(dataNews: ResponseNewsItem){
             binding.tittleNewsUpdate.text = dataNews.title
