@@ -10,17 +10,28 @@
         android:padding="5dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-        <ImageView
-            android:id="@+id/lRGambarProduct"
-            android:src="@drawable/product"
-            android:layout_width="100dp"
-            android:layout_height="100dp"/>
+
+        <LinearLayout
+            android:id="@+id/relativeLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/raunded"
+            android:layout_margin="5dp">
+
+            <ImageView
+                android:id="@+id/lRGambarProduct"
+                android:src="@drawable/product"
+                android:layout_width="100dp"
+                android:layout_height="100dp"/>
+
+        </LinearLayout>
+
 
         <TextView
             android:id="@+id/lRNama"
             style="@style/list"
             android:layout_marginLeft="10dp"
-            android:layout_toRightOf="@id/lRGambarProduct"
+            android:layout_toRightOf="@id/relativeLayout"
             android:text="Nama"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
@@ -30,7 +41,7 @@
             android:layout_below="@id/lRNama"
             android:layout_marginTop="5dp"
             android:layout_marginLeft="10dp"
-            android:layout_toRightOf="@id/lRGambarProduct"
+            android:layout_toRightOf="@id/relativeLayout"
             android:text="Harga"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>

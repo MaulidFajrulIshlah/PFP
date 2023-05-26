@@ -13,12 +13,12 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerInParent="true"
-        android:textColor="@color/black"
-        android:textSize="20sp"
-        android:textStyle="bold"
         android:layout_marginTop="62dp"
         android:layout_marginEnd="180dp"
-        android:text="@string/login" />
+        android:text="@string/login"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold" />
 
 
     <ImageView
@@ -93,6 +93,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/btnLogin"
         android:layout_alignParentStart="true"
+        android:textSize="15sp"
         android:layout_marginStart="142dp"
         android:layout_marginTop="5dp"
         android:text="@string/belum_punya_akun" />
