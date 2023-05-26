@@ -3,12 +3,192 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".view.FragmentProfile">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="160dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/profile"
+        android:textColor="@color/black"
+        android:textSize="30sp"
+        android:textStyle="bold" />
 
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="45dp"
+        android:layout_marginRight="45dp"
+        android:layout_below="@+id/textView3"
+        android:layout_alignParentEnd="true"
+        android:id="@+id/materialEmail"
+        android:layout_marginTop="10dp">
+
+        <EditText
+            android:id="@+id/ubahEmail"
+            android:backgroundTint="#DEFDFC"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="@string/email"
+            tools:ignore="SpeakableTextPresentCheck"
+            android:autofillHints=""
+            android:inputType="textEmailAddress" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="45dp"
+        android:layout_marginRight="45dp"
+        android:layout_below="@+id/materialEmail"
+        android:layout_alignParentEnd="true"
+        android:id="@+id/materialUsername"
+        android:layout_marginTop="15dp">
+
+        <EditText
+            android:id="@+id/ubahUsername"
+            android:backgroundTint="#DEFDFC"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="@string/username"
+            tools:ignore="SpeakableTextPresentCheck"
+            android:autofillHints=""
+            android:inputType="text" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/materialNamaLengkap"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="45dp"
+        android:layout_marginRight="45dp"
+        android:layout_below="@+id/materialUsername"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="15dp">
+
+        <EditText
+            android:id="@+id/ubahNamaLengkap"
+            android:backgroundTint="#DEFDFC"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="@string/nama_lengkap"
+            tools:ignore="SpeakableTextPresentCheck"
+            android:autofillHints=""
+            android:inputType="text" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/materialPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:endIconMode="password_toggle"
+        android:layout_marginLeft="45dp"
+        android:layout_marginRight="45dp"
+        android:layout_below="@+id/materialNamaLengkap"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="15dp">
+
+        <EditText
+            android:id="@+id/ubahPassword"
+            android:inputType="textPassword"
+            android:layout_width="match_parent"
+            android:backgroundTint="#DEFDFC"
+            android:layout_height="match_parent"
+            android:hint="@string/password"
+            tools:ignore="SpeakableTextPresentCheck"
+            android:autofillHints="" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/materialConfirPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:endIconMode="password_toggle"
+        android:layout_marginLeft="45dp"
+        android:layout_marginRight="45dp"
+        android:layout_below="@+id/materialPassword"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="15dp">
+
+        <EditText
+            android:id="@+id/ubahConfPassword"
+            android:inputType="textPassword"
+            android:layout_width="match_parent"
+            android:backgroundTint="#DEFDFC"
+            android:layout_height="match_parent"
+            android:hint="@string/masukan_konfirmasi_password"
+            tools:ignore="SpeakableTextPresentCheck"
+            android:autofillHints="" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/materialTanggalLahir"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="45dp"
+        android:layout_marginRight="45dp"
+        android:layout_below="@+id/materialConfirPassword"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="15dp">
+
+        <EditText
+            android:id="@+id/TglLahir"
+            android:backgroundTint="#DEFDFC"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="@string/tanggal_lahir"
+            tools:ignore="SpeakableTextPresentCheck"
+            android:autofillHints=""
+            android:inputType="number" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/materialAlamat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="45dp"
+        android:layout_marginRight="45dp"
+        android:layout_below="@+id/materialTanggalLahir"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="15dp">
+
+        <EditText
+            android:id="@+id/ubahAlamat"
+            android:layout_width="match_parent"
+            android:backgroundTint="#DEFDFC"
+            android:layout_height="match_parent"
+            android:hint="@string/alamat"
+            tools:ignore="SpeakableTextPresentCheck"
+            android:autofillHints=""
+            android:inputType="text" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/Update"
+        android:layout_width="231dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/materialAlamat"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="93dp"
+        android:backgroundTint="#B0DAFF"
+        android:layout_marginTop="20dp"
+        android:textColor="@color/black"
+        android:text="@string/update" />
+
+    <Button
+        android:id="@+id/Logout"
+        android:layout_width="231dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Update"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="92dp"
+        android:backgroundTint="#B0DAFF"
+        android:layout_marginTop="20dp"
+        android:textColor="@color/black"
+        android:text="@string/logout" />
 </RelativeLayout>
