@@ -6,11 +6,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.geminiboy.pfp.R
 import com.geminiboy.pfp.databinding.FragmentLoginBinding
 import com.geminiboy.pfp.model.users.SignInBody
+import com.geminiboy.pfp.view.MainActivity
 import com.geminiboy.pfp.view.uiutil.LoadingDialog
 import com.geminiboy.pfp.viewmodel.LoginViewModel
 import com.geminiboy.pfp.wrapper.Resource
@@ -32,6 +34,8 @@ class LoginFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val loading = LoadingDialog(requireActivity())
+        (requireActivity() as AppCompatActivity).supportActionBar?.hide()
+        (activity as MainActivity).setBottomNavigationVisibility(View.GONE)
 
         loginVM.loginResult.observe(viewLifecycleOwner) { resource ->
             when (resource) {

@@ -40,6 +40,7 @@ class RegisterFragment : Fragment() {
         val loading = LoadingDialog(requireActivity())
         (requireActivity() as AppCompatActivity).supportActionBar?.hide()
         (activity as MainActivity).setBottomNavigationVisibility(View.GONE)
+
         registerVM.registerResult.observe(viewLifecycleOwner) { resource ->
             when (resource) {
                 is Resource.Loading -> {
