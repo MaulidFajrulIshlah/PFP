@@ -17,19 +17,19 @@ import javax.inject.Inject
 @HiltViewModel
 class CategoryViewModel @Inject constructor(private val api : APIService): ViewModel(){
 
-    private val _listCategory: MutableLiveData<Resource<ResponseCategoryItem>> = MutableLiveData()
-    val listCategory: LiveData<Resource<ResponseCategoryItem>> get() = _listCategory
+    private val _listProduct: MutableLiveData<Resource<List<ResponseProductItem>>> = MutableLiveData()
+    val listProduct: LiveData<Resource<List<ResponseProductItem>>> get() = _listProduct
 
 
     fun setCategoryList(id: Int) = viewModelScope.launch {
         try {
-            _listCategory.postValue(Resource.Loading())
+            _listProduct.postValue(Resource.Loading())
 
-            val response = api.getCategoryById(id)
-            _listCategory.postValue(Resource.Success(response))
+            val response = api.getProduct(id)
+            _listProduct.postValue(Resource.Success(response))
 
         } catch(e: Exception) {
-            _listCategory.postValue(Resource.Error(e.message!!))
+            _listProduct.postValue(Resource.Error(e.message!!))
             Log.e("error", e.message!!)
         }
     }

@@ -24,7 +24,8 @@ class AdapterCategory(private val listCategory : List<ResponseCategoryItem>):
 
                     cardViewToCategory.setOnClickListener {
                         val bundleToC = Bundle().apply {
-                            putInt("IDCATEGORY", dataToCateg.id.toInt())
+                            putInt("ID_CATEGORY", dataToCateg.id.toInt())
+                            putString("NAME_CATEGORY", dataToCateg.name)
                         }
                         it.findNavController().navigate(R.id.action_fragmentHome_to_categoryFragment, bundleToC)
                     }

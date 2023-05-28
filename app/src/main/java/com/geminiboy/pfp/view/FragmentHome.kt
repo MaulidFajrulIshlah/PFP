@@ -8,9 +8,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.denzcoskun.imageslider.ImageSlider
 import com.denzcoskun.imageslider.models.SlideModel
-import com.geminiboy.pfp.R
 import com.geminiboy.pfp.adapter.AdapterCategory
 import com.geminiboy.pfp.adapter.AdapterNewsUpdate
 import com.geminiboy.pfp.adapter.AdapterProduct
@@ -75,7 +73,7 @@ class FragmentHome : Fragment() {
     }
 
     private fun setLayoutToCategory(){
-        binding.rvCategory.layoutManager = GridLayoutManager(requireContext(), 2)
+        binding.rvCategory.layoutManager = GridLayoutManager(requireContext(), 4)
 
         toCategori.setToCategory()
         toCategori.toCateg.observe(viewLifecycleOwner){

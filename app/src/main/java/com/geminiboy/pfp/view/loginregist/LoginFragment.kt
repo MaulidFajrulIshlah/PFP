@@ -13,7 +13,7 @@ import com.geminiboy.pfp.R
 import com.geminiboy.pfp.databinding.FragmentLoginBinding
 import com.geminiboy.pfp.model.users.SignInBody
 import com.geminiboy.pfp.view.MainActivity
-import com.geminiboy.pfp.view.uiutil.LoadingDialog
+import com.geminiboy.pfp.view.util.LoadingDialog
 import com.geminiboy.pfp.viewmodel.LoginViewModel
 import com.geminiboy.pfp.wrapper.Resource
 import dagger.hilt.android.AndroidEntryPoint

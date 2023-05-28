@@ -8,10 +8,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.GridLayoutManager
-import com.bumptech.glide.Glide
-import com.geminiboy.pfp.R
-import com.geminiboy.pfp.adapter.AdapterCategory
-import com.geminiboy.pfp.adapter.AdapterListCategory
+import com.geminiboy.pfp.adapter.AdapterProduct
 import com.geminiboy.pfp.databinding.FragmentCategoryBinding
 import com.geminiboy.pfp.viewmodel.CategoryViewModel
 import com.geminiboy.pfp.wrapper.Resource
@@ -33,15 +30,19 @@ class CategoryFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val getCategorytId = arguments?.getInt("IDCATEGORY")
-        setLayoutCategory(getCategorytId!!)
+        val getProductId = arguments?.getInt("ID_CATEGORY")
+        val getNameCategory = arguments?.getString("NAME_CATEGORY")
+        binding.txtCategoryCategory.text = getNameCategory
+        print(getProductId)
+        print(getNameCategory)
+        setLayoutCategory(getProductId!!)
     }
 
     private fun setLayoutCategory(id : Int){
         listItemCategoryyyVM.setCategoryList(id)
 
         binding.rvListCategory.layoutManager = GridLayoutManager(requireContext(), 2)
-        listItemCategoryyyVM.listCategory.observe(viewLifecycleOwner){
+        listItemCategoryyyVM.listProduct.observe(viewLifecycleOwner){
             when(it){
                 is Resource.Loading ->{
                     binding.progressBarCateg.visibility = View.VISIBLE
@@ -54,10 +55,8 @@ class CategoryFragment : Fragment() {
                 is Resource.Success -> {
                     binding.progressBarCateg.visibility = View.GONE
                     binding.contentCategory.visibility = View.VISIBLE
-
-                    binding.rvListCategory.adapter = AdapterListCategory(it)
-
-
+                    val data = it.data!!
+                    binding.rvListCategory.adapter = AdapterProduct(data)
                 }
 
             }

@@ -1,7 +1,6 @@
 package com.geminiboy.pfp.view.loginregist
 
 import android.os.Bundle
-import android.os.Handler
 import android.util.Patterns
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -11,16 +10,14 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.geminiboy.pfp.R
 import com.geminiboy.pfp.databinding.FragmentRegisterBinding
 import com.geminiboy.pfp.view.MainActivity
-import com.geminiboy.pfp.view.uiutil.LoadingDialog
+import com.geminiboy.pfp.view.util.LoadingDialog
 import com.geminiboy.pfp.viewmodel.RegisterViewModel
 import com.geminiboy.pfp.wrapper.Resource
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
 
 @AndroidEntryPoint
