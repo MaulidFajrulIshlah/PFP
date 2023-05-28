@@ -55,8 +55,7 @@ class CategoryFragment : Fragment() {
                 is Resource.Success -> {
                     binding.progressBarCateg.visibility = View.GONE
                     binding.contentCategory.visibility = View.VISIBLE
-                    val data = it.data!!
-                    binding.rvListCategory.adapter = AdapterProduct(data)
+                    binding.rvListCategory.adapter = AdapterProduct(it.data!!, false)
                 }
 
             }

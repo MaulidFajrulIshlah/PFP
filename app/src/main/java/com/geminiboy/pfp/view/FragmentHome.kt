@@ -66,7 +66,7 @@ class FragmentHome : Fragment() {
         productVM.setProduct()
         productVM.product.observe(viewLifecycleOwner){
             if (it != null){
-                binding.rvProduct.adapter = AdapterProduct(it)
+                binding.rvProduct.adapter = AdapterProduct(it, true)
             }
         }
 
