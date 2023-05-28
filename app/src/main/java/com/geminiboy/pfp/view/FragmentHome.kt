@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.denzcoskun.imageslider.ImageSlider
 import com.denzcoskun.imageslider.models.SlideModel
 import com.geminiboy.pfp.R
+import com.geminiboy.pfp.adapter.AdapterCategory
 import com.geminiboy.pfp.adapter.AdapterNewsUpdate
 import com.geminiboy.pfp.adapter.AdapterProduct
 import com.geminiboy.pfp.databinding.FragmentHomeBinding
@@ -23,6 +24,7 @@ class FragmentHome : Fragment() {
     lateinit var binding : FragmentHomeBinding
     private val homeVM : HomeViewModel by viewModels()
     private val productVM : HomeViewModel by viewModels()
+    private val toCategori : HomeViewModel by viewModels()
 
     val imageList = arrayListOf<SlideModel>()
     override fun onCreateView(
@@ -45,6 +47,7 @@ class FragmentHome : Fragment() {
 
         setLayoutNewsUpdate()
         setLayoutProduct()
+        setLayoutToCategory()
 
     }
     private fun setLayoutNewsUpdate(){
@@ -69,6 +72,17 @@ class FragmentHome : Fragment() {
             }
         }
 
+    }
+
+    private fun setLayoutToCategory(){
+        binding.rvCategory.layoutManager = GridLayoutManager(requireContext(), 2)
+
+        toCategori.setToCategory()
+        toCategori.toCateg.observe(viewLifecycleOwner){
+            if (it != null){
+                binding.rvCategory.adapter = AdapterCategory(it)
+            }
+        }
     }
 
 

@@ -16,7 +16,7 @@
         android:layout_height="wrap_content">
 
         <com.google.android.material.imageview.ShapeableImageView
-            android:id="@+id/imgProduct"
+            android:id="@+id/imgCategoryList"
             android:layout_width="70dp"
             android:layout_height="70dp"
             android:layout_alignParentTop="true"
@@ -29,11 +29,11 @@
 
 
         <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/hargaBarang"
+            android:id="@+id/txt_nama_barang_category"
             style="@style/list"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/imgProduct"
+            android:layout_below="@id/imgCategoryList"
             android:layout_centerInParent="true"
             android:layout_marginBottom="10dp"
             android:textSize="10sp"

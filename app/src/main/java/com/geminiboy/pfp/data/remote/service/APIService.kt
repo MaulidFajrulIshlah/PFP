@@ -2,6 +2,7 @@ package com.geminiboy.pfp.data.remote.service
 
 import com.geminiboy.pfp.model.cart.ResponseCart
 import com.geminiboy.pfp.model.category.ResponseCategory
+import com.geminiboy.pfp.model.category.ResponseCategoryItem
 import com.geminiboy.pfp.model.favourite.ResponseFavourite
 import com.geminiboy.pfp.model.news.ResponseNews
 import com.geminiboy.pfp.model.product.ResponseProduct
@@ -77,7 +78,7 @@ interface APIService {
     suspend fun getCategory(): ResponseCategory
 
     @GET("category_product/{id}")
-    suspend fun getCategoryById(@Path("id") id: Int): ResponseCategory
+    suspend fun getCategoryById(@Path("id") id: Int): ResponseCategoryItem
 
     //Product
     @GET("category_product/{id}/products")

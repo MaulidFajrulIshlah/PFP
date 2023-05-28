@@ -88,7 +88,7 @@
 
     <TextView
         android:textColor="@color/black"
-        android:id="@+id/Register"
+        android:id="@+id/txt_bpa"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/btnLogin"
