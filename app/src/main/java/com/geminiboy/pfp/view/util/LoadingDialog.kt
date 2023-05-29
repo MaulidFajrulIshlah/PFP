@@ -1,8 +1,7 @@
-package com.geminiboy.pfp.view.uiutil
+package com.geminiboy.pfp.view.util
 
 import android.app.Dialog
 import android.content.Context
-import android.view.ViewGroup
 import android.view.Window
 import com.geminiboy.pfp.R
 

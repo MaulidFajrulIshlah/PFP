@@ -1,5 +1,6 @@
 package com.geminiboy.pfp.viewmodel
 
+import android.support.v4.os.IResultReceiver._Parcel
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -29,6 +30,10 @@ class HomeViewModel @Inject constructor(
     val product: LiveData<List<ResponseProductItem>> get() = _product
 
 
+    private val _toCateg: MutableLiveData<List<ResponseCategoryItem>> = MutableLiveData()
+    val toCateg: LiveData<List<ResponseCategoryItem>> get() = _toCateg
+
+
     fun setNewsUpdate() = viewModelScope.launch {
         val response = api.getNewsUpdate()
         try {
@@ -48,6 +53,16 @@ class HomeViewModel @Inject constructor(
             Log.e("error", e.message!!)
         }
 
+    }
+
+    fun setToCategory() = viewModelScope.launch {
+        val response = api.getCategory()
+        try {
+            _toCateg.postValue(response)
+
+        }catch (e : Exception){
+            Log.e("error", e.message!!)
+        }
     }
 
 

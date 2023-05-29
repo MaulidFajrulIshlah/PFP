@@ -2,7 +2,7 @@
 <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/cardViewProduct"
+    android:id="@+id/cardViewToCategory"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_margin="20dp"
@@ -16,7 +16,7 @@
         android:layout_height="wrap_content">
 
         <com.google.android.material.imageview.ShapeableImageView
-            android:id="@+id/imgProduct"
+            android:id="@+id/imgCateg"
             android:layout_width="70dp"
             android:layout_height="70dp"
             android:layout_alignParentTop="true"
@@ -29,15 +29,15 @@
 
 
         <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/hargaBarang"
+            android:id="@+id/namaCateg"
             style="@style/list"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/imgProduct"
+            android:layout_below="@id/imgCateg"
             android:layout_centerInParent="true"
             android:layout_marginBottom="10dp"
+            android:text="namaCategory"
             android:textSize="10sp"
-            android:text="hargaBarang"
             android:textStyle="bold" />
 
     </RelativeLayout>

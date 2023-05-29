@@ -14,7 +14,7 @@ import androidx.navigation.fragment.findNavController
 import com.geminiboy.pfp.R
 import com.geminiboy.pfp.databinding.FragmentRegisterBinding
 import com.geminiboy.pfp.view.MainActivity
-import com.geminiboy.pfp.view.uiutil.LoadingDialog
+import com.geminiboy.pfp.view.util.LoadingDialog
 import com.geminiboy.pfp.viewmodel.RegisterViewModel
 import com.geminiboy.pfp.wrapper.Resource
 import dagger.hilt.android.AndroidEntryPoint

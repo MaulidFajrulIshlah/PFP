@@ -11,10 +11,9 @@ import com.geminiboy.pfp.databinding.ItemNewsUpdateBinding
 import com.geminiboy.pfp.databinding.ItemProductBinding
 import com.geminiboy.pfp.model.product.ResponseProductItem
 
-class AdapterProduct(private val listProduct: List<ResponseProductItem>) : RecyclerView.Adapter<AdapterProduct.ViewHolder>() {
-
+class AdapterProduct(private val listProduct: List<ResponseProductItem>, private val isHome: Boolean) : RecyclerView.Adapter<AdapterProduct.ViewHolder>() {
     class ViewHolder(var binding: ItemProductBinding): RecyclerView.ViewHolder(binding.root) {
-        fun bindProduct(dataProduct : ResponseProductItem){
+        fun bindProduct(dataProduct : ResponseProductItem, isHome: Boolean){
             with(itemView){
                 binding.apply {
                     binding.namaBarang.text = dataProduct.name
@@ -25,13 +24,15 @@ class AdapterProduct(private val listProduct: List<ResponseProductItem>) : Recyc
                         val bundle = Bundle().apply {
                             putInt("ID", dataProduct.idProduct.toInt())
                         }
-                        it.findNavController().navigate(R.id.action_fragmentHome_to_detailFragment, bundle)
+                        if (isHome) {
+                            it.findNavController().navigate(R.id.action_fragmentHome_to_detailFragment, bundle)
+                        } else {
+                            it.findNavController().navigate(R.id.action_categoryFragment_to_detailFragment, bundle)
+                        }
                     }
                 }
             }
         }
-
-
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AdapterProduct.ViewHolder {
@@ -40,7 +41,7 @@ class AdapterProduct(private val listProduct: List<ResponseProductItem>) : Recyc
     }
 
     override fun onBindViewHolder(holder: AdapterProduct.ViewHolder, position: Int) {
-        holder.bindProduct(listProduct[position])
+        holder.bindProduct(listProduct[position], isHome)
     }
 
     override fun getItemCount(): Int = listProduct.size

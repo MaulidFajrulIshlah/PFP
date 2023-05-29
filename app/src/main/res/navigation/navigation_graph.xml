@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation_graph"
-    app:startDestination="@id/loginFragment">
+    app:startDestination="@id/fragmentHome">
 
     <fragment
         android:id="@+id/fragmentHome"
@@ -28,6 +28,9 @@
         <action
             android:id="@+id/action_fragmentHome_to_fragmentRiwayat"
             app:destination="@id/fragmentRiwayat" />
+        <action
+            android:id="@+id/action_fragmentHome_to_categoryFragment"
+            app:destination="@id/categoryFragment" />
     </fragment>
     <fragment
         android:id="@+id/detailFragment"
@@ -66,5 +69,17 @@
         <action
             android:id="@+id/action_loginFragment_to_fragmentHome"
             app:destination="@id/fragmentHome" />
+        <action
+            android:id="@+id/action_loginFragment_to_registerFragment"
+            app:destination="@id/registerFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/categoryFragment"
+        android:name="com.geminiboy.pfp.view.CategoryFragment"
+        android:label="fragment_category"
+        tools:layout="@layout/fragment_category" >
+        <action
+            android:id="@+id/action_categoryFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
     </fragment>
 </navigation>

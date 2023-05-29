@@ -9,6 +9,7 @@ import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.denzcoskun.imageslider.models.SlideModel
+import com.geminiboy.pfp.adapter.AdapterCategory
 import com.geminiboy.pfp.adapter.AdapterNewsUpdate
 import com.geminiboy.pfp.adapter.AdapterProduct
 import com.geminiboy.pfp.databinding.FragmentHomeBinding
@@ -18,14 +19,15 @@ import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class FragmentHome : Fragment() {
-    private lateinit var binding : FragmentHomeBinding
+    lateinit var binding : FragmentHomeBinding
     private val homeVM : HomeViewModel by viewModels()
     private val productVM : HomeViewModel by viewModels()
+    private val toCategori : HomeViewModel by viewModels()
 
-    private val imageList = arrayListOf<SlideModel>()
+    val imageList = arrayListOf<SlideModel>()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?): View {
+        savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
         binding = FragmentHomeBinding.inflate(layoutInflater,container,false)
         return binding.root
@@ -43,6 +45,7 @@ class FragmentHome : Fragment() {
 
         setLayoutNewsUpdate()
         setLayoutProduct()
+        setLayoutToCategory()
 
     }
     private fun setLayoutNewsUpdate(){
@@ -63,10 +66,21 @@ class FragmentHome : Fragment() {
         productVM.setProduct()
         productVM.product.observe(viewLifecycleOwner){
             if (it != null){
-                binding.rvProduct.adapter = AdapterProduct(it)
+                binding.rvProduct.adapter = AdapterProduct(it, true)
             }
         }
 
+    }
+
+    private fun setLayoutToCategory(){
+        binding.rvCategory.layoutManager = GridLayoutManager(requireContext(), 4)
+
+        toCategori.setToCategory()
+        toCategori.toCateg.observe(viewLifecycleOwner){
+            if (it != null){
+                binding.rvCategory.adapter = AdapterCategory(it)
+            }
+        }
     }
 
 
