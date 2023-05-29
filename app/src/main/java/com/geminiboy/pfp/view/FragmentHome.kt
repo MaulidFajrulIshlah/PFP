@@ -8,9 +8,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.denzcoskun.imageslider.ImageSlider
 import com.denzcoskun.imageslider.models.SlideModel
-import com.geminiboy.pfp.R
 import com.geminiboy.pfp.adapter.AdapterNewsUpdate
 import com.geminiboy.pfp.adapter.AdapterProduct
 import com.geminiboy.pfp.databinding.FragmentHomeBinding
@@ -20,14 +18,14 @@ import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class FragmentHome : Fragment() {
-    lateinit var binding : FragmentHomeBinding
+    private lateinit var binding : FragmentHomeBinding
     private val homeVM : HomeViewModel by viewModels()
     private val productVM : HomeViewModel by viewModels()
 
-    val imageList = arrayListOf<SlideModel>()
+    private val imageList = arrayListOf<SlideModel>()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?): View? {
+        savedInstanceState: Bundle?): View {
         // Inflate the layout for this fragment
         binding = FragmentHomeBinding.inflate(layoutInflater,container,false)
         return binding.root
