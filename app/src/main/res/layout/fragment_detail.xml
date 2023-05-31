@@ -67,14 +67,17 @@
             android:layout_height="wrap_content"/>
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/loveDetail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/loveDetail"
             android:layout_below="@id/desBarang"
-            android:src="@drawable/ic_favorite"
-            android:layout_margin="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
             android:layout_toStartOf="@id/cartDetail"
-            android:contentDescription="@string/todo" />
+            android:contentDescription="@string/todo"
+            android:src="@drawable/ic_favorite" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/cartDetail"

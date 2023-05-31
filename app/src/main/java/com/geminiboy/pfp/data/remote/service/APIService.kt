@@ -4,6 +4,7 @@ import com.geminiboy.pfp.model.cart.ResponseCart
 import com.geminiboy.pfp.model.category.ResponseCategory
 import com.geminiboy.pfp.model.category.ResponseCategoryItem
 import com.geminiboy.pfp.model.favourite.ResponseFavourite
+import com.geminiboy.pfp.model.favourite.ResponseFavouriteItem
 import com.geminiboy.pfp.model.news.ResponseNews
 import com.geminiboy.pfp.model.product.ResponseProduct
 import com.geminiboy.pfp.model.product.ResponseProductItem

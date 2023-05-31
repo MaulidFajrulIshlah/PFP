@@ -11,7 +11,8 @@ import com.geminiboy.pfp.databinding.ItemNewsUpdateBinding
 import com.geminiboy.pfp.databinding.ItemProductBinding
 import com.geminiboy.pfp.model.product.ResponseProductItem
 
-class AdapterProduct(private val listProduct: List<ResponseProductItem>, private val isHome: Boolean) : RecyclerView.Adapter<AdapterProduct.ViewHolder>() {
+class AdapterProduct(private val listProduct: List<ResponseProductItem>,
+                     private val isHome: Boolean) : RecyclerView.Adapter<AdapterProduct.ViewHolder>() {
     class ViewHolder(var binding: ItemProductBinding): RecyclerView.ViewHolder(binding.root) {
         fun bindProduct(dataProduct : ResponseProductItem, isHome: Boolean){
             with(itemView){

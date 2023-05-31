@@ -2,6 +2,7 @@ package com.geminiboy.pfp.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.geminiboy.pfp.R
 import com.geminiboy.pfp.databinding.ActivityMainBinding
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -22,10 +23,24 @@ class MainActivity : AppCompatActivity() {
 //
 //
 //        val sliderLayout = findViewById<ImageSlider>(R.id.image_slider)
-//        sliderLayout.setImageList(imageList)
+//        sliderLayout.setImageList(imageList)\
+
+        val homeFrag = FragmentHome()
+        val favFrag = FragmentFavorit()
+
+
+        binding.favorite.setOnClickListener {
+            supportFragmentManager.beginTransaction().apply {
+                replace(R.id.fragmentContainerView, favFrag)
+                commit()
+            }
+
+        }
     }
 
-    fun setBottomNavigationVisibility(visibility: Int) {
-        binding.bottomNavigationLayout.visibility = visibility
-    }
+        fun setBottomNavigationVisibility(visibility: Int) {
+            binding.bottomNavigationLayout.visibility = visibility
+        }
+
 }
+
