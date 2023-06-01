@@ -9,8 +9,8 @@ import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.GridLayoutManager
 import com.geminiboy.pfp.R
-import com.geminiboy.pfp.adapter.AdapterFavourite
-import com.geminiboy.pfp.adapter.AdapterProduct
+import com.geminiboy.pfp.view.adapter.AdapterFavourite
+import com.geminiboy.pfp.view.adapter.AdapterProduct
 import com.geminiboy.pfp.databinding.FragmentFavoritBinding
 import com.geminiboy.pfp.databinding.FragmentHomeBinding
 import com.geminiboy.pfp.viewmodel.FavoriteViewModel

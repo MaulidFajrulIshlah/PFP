@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.GridLayoutManager
-import com.geminiboy.pfp.adapter.AdapterProduct
+import com.geminiboy.pfp.view.adapter.AdapterProduct
 import com.geminiboy.pfp.databinding.FragmentCategoryBinding
 import com.geminiboy.pfp.viewmodel.CategoryViewModel
 import com.geminiboy.pfp.wrapper.Resource

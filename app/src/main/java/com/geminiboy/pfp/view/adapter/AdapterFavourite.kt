@@ -1,4 +1,4 @@
-package com.geminiboy.pfp.adapter
+package com.geminiboy.pfp.view.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -20,12 +20,12 @@ class AdapterFavourite(private val listFavorite : List<ResponseFavouriteItem>):
             }
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AdapterFavourite.ViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = ListFavoriteBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return ViewHolder(view)
     }
 
-    override fun onBindViewHolder(holder: AdapterFavourite.ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.bindFavoriteList(listFavorite[position])
 
     }

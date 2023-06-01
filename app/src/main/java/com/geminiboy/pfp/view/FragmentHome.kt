@@ -9,9 +9,9 @@ import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.denzcoskun.imageslider.models.SlideModel
-import com.geminiboy.pfp.adapter.AdapterCategory
-import com.geminiboy.pfp.adapter.AdapterNewsUpdate
-import com.geminiboy.pfp.adapter.AdapterProduct
+import com.geminiboy.pfp.view.adapter.AdapterCategory
+import com.geminiboy.pfp.view.adapter.AdapterNewsUpdate
+import com.geminiboy.pfp.view.adapter.AdapterProduct
 import com.geminiboy.pfp.databinding.FragmentHomeBinding
 import com.geminiboy.pfp.viewmodel.HomeViewModel
 import dagger.hilt.android.AndroidEntryPoint
@@ -21,32 +21,22 @@ import dagger.hilt.android.AndroidEntryPoint
 class FragmentHome : Fragment() {
     lateinit var binding : FragmentHomeBinding
     private val homeVM : HomeViewModel by viewModels()
-    private val productVM : HomeViewModel by viewModels()
-    private val toCategori : HomeViewModel by viewModels()
 
-    val imageList = arrayListOf<SlideModel>()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?): View? {
+        savedInstanceState: Bundle?): View {
         // Inflate the layout for this fragment
         binding = FragmentHomeBinding.inflate(layoutInflater,container,false)
         return binding.root
-
-
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        imageList.add(SlideModel("https://www.simplilearn.com/ice9/free_resources_article_thumb/what_is_image_Processing.jpg"))
-        imageList.add(SlideModel("https://www.seiu1000.org/sites/main/files/main-images/camera_lense_0.jpeg"))
-
-        val sliderLayout = binding.imageSlider
-        sliderLayout.setImageList(imageList)
 
         setLayoutNewsUpdate()
         setLayoutProduct()
         setLayoutToCategory()
-
+        setSliders()
     }
     private fun setLayoutNewsUpdate(){
         binding.rvNewsUpdate.layoutManager = LinearLayoutManager(requireContext(),
@@ -63,8 +53,8 @@ class FragmentHome : Fragment() {
     private fun setLayoutProduct(){
         binding.rvProduct.layoutManager = GridLayoutManager(requireContext(), 2)
 
-        productVM.setProduct()
-        productVM.product.observe(viewLifecycleOwner){
+        homeVM.setProduct()
+        homeVM.product.observe(viewLifecycleOwner){
             if (it != null){
                 binding.rvProduct.adapter = AdapterProduct(it, true)
             }
@@ -75,13 +65,23 @@ class FragmentHome : Fragment() {
     private fun setLayoutToCategory(){
         binding.rvCategory.layoutManager = GridLayoutManager(requireContext(), 4)
 
-        toCategori.setToCategory()
-        toCategori.toCateg.observe(viewLifecycleOwner){
+        homeVM.setToCategory()
+        homeVM.toCateg.observe(viewLifecycleOwner){
             if (it != null){
                 binding.rvCategory.adapter = AdapterCategory(it)
             }
         }
     }
 
-
+    fun setSliders(){
+        val imageList = arrayListOf<SlideModel>()
+        homeVM.getSliders()
+        homeVM.sliders.observe(viewLifecycleOwner){
+            imageList.clear()
+            for(i in it){
+                imageList.add(SlideModel(i.image))
+            }
+            binding.imageSlider.setImageList(imageList)
+        }
+    }
 }

@@ -11,8 +11,8 @@ import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
 import com.geminiboy.pfp.R
-import com.geminiboy.pfp.adapter.AdapterNewsUpdate
-import com.geminiboy.pfp.adapter.AdapterProduct
+import com.geminiboy.pfp.view.adapter.AdapterNewsUpdate
+import com.geminiboy.pfp.view.adapter.AdapterProduct
 import com.geminiboy.pfp.databinding.FragmentDetailBinding
 import com.geminiboy.pfp.databinding.FragmentHomeBinding
 import com.geminiboy.pfp.model.product.ResponseProductItem

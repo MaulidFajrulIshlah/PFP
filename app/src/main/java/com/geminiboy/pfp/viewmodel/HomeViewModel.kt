@@ -10,7 +10,9 @@ import com.geminiboy.pfp.data.remote.service.APIService
 import com.geminiboy.pfp.model.category.ResponseCategoryItem
 import com.geminiboy.pfp.model.news.ResponseNewsItem
 import com.geminiboy.pfp.model.product.ResponseProductItem
+import com.geminiboy.pfp.model.sliders.ResponseSlidersItem
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import retrofit2.Call
 import retrofit2.Callback
@@ -29,6 +31,8 @@ class HomeViewModel @Inject constructor(
     private val _product: MutableLiveData<List<ResponseProductItem>> = MutableLiveData()
     val product: LiveData<List<ResponseProductItem>> get() = _product
 
+    private val _sliders = MutableLiveData<List<ResponseSlidersItem>>()
+    val sliders: LiveData<List<ResponseSlidersItem>> = _sliders
 
     private val _toCateg: MutableLiveData<List<ResponseCategoryItem>> = MutableLiveData()
     val toCateg: LiveData<List<ResponseCategoryItem>> get() = _toCateg
@@ -66,6 +70,13 @@ class HomeViewModel @Inject constructor(
     }
 
 
-
+    fun getSliders() = viewModelScope.launch(Dispatchers.IO) {
+        try {
+            val response = api.getSliders()
+            _sliders.postValue(response)
+        }catch (e: Exception){
+            throw e
+        }
+    }
 
 }

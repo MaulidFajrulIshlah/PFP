@@ -1,4 +1,4 @@
-package com.geminiboy.pfp.adapter
+package com.geminiboy.pfp.view.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -20,12 +20,12 @@ class AdapterNewsUpdate(private val listNewsUpdate: List<ResponseNewsItem>):
 
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AdapterNewsUpdate.ViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = ItemNewsUpdateBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return ViewHolder(view)
     }
 
-    override fun onBindViewHolder(holder: AdapterNewsUpdate.ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.bindNewsUpdate(listNewsUpdate[position])
     }
 

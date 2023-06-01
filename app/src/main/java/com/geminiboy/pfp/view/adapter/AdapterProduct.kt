@@ -1,4 +1,4 @@
-package com.geminiboy.pfp.adapter
+package com.geminiboy.pfp.view.adapter
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -36,12 +36,12 @@ class AdapterProduct(private val listProduct: List<ResponseProductItem>,
         }
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AdapterProduct.ViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = ItemProductBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return ViewHolder(view)
     }
 
-    override fun onBindViewHolder(holder: AdapterProduct.ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.bindProduct(listProduct[position], isHome)
     }
 

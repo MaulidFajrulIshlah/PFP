@@ -30,4 +30,7 @@
     <string name="profile" translatable="false">Profile</string>
     <string name="judul" translatable="false">judul</string>
     <string name="_05_05_2023" translatable="false">05_05_2023</string>
+    <string name="favourite">Favourite</string>
+    <string name="history">History</string>
+    <string name="transaction_history">Transaction History</string>
 </resources>

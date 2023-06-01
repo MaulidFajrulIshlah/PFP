@@ -9,7 +9,9 @@ import com.geminiboy.pfp.model.news.ResponseNews
 import com.geminiboy.pfp.model.product.ResponseProduct
 import com.geminiboy.pfp.model.product.ResponseProductItem
 import com.geminiboy.pfp.model.sliders.ResponseSliders
+import com.geminiboy.pfp.model.sliders.ResponseSlidersItem
 import com.geminiboy.pfp.model.transaksi_history.ResponseTransactionHistory
+import com.geminiboy.pfp.model.transaksi_history.ResponseTransactionHistoryItem
 import com.geminiboy.pfp.model.users.ResponseUsers
 import com.geminiboy.pfp.model.users.ResponseUsersItem
 import com.geminiboy.pfp.model.users.UserBody
@@ -33,16 +35,10 @@ interface APIService {
 
     //Transaction History
     @GET("users/{id}/transhistory")
-    suspend fun getUserTransactionHistory(@Path("id") id: Int): ResponseTransactionHistory
+    suspend fun getUserTransactionHistory(@Path("id") id: Int): List<ResponseTransactionHistoryItem>
 
     @POST("users/{id}/transhistory")
-    suspend fun postTransactionHistory(@Path("id") id: Int): ResponseUsers
-
-    @DELETE("users/{id}/transhistory/{id_trans}")
-    suspend fun deleteTransactionHistory(
-        @Path("id") id: Int,
-        @Path("id_trans") id_trans: Int
-    ): ResponseTransactionHistory
+    suspend fun postTransactionHistory(@Path("id") id: Int): ResponseTransactionHistoryItem
 
     //Cart
     @GET("users/{id}/cart")
@@ -93,5 +89,5 @@ interface APIService {
 
     //Sliders
     @GET("sliders")
-    suspend fun getSliders(): ResponseSliders
+    suspend fun getSliders(): List<ResponseSlidersItem>
 }
